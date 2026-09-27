@@ -1,24 +1,51 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/Nav";
+import { Hero } from "@/components/sections/Hero";
+import { About, ResumeStrip } from "@/components/sections/About";
+import { Expertise } from "@/components/sections/Expertise";
+import { Skills } from "@/components/sections/Skills";
+import { Projects } from "@/components/sections/Projects";
+import { Achievements, Certifications, Education, Experience } from "@/components/sections/Journey";
+import { Contact, Footer, Profiles, Resume } from "@/components/sections/Contact";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "Marri Lalitha Raga Pravallika | Software & Embedded Systems Engineer";
+const description =
+  "Portfolio of Marri Lalitha Raga Pravallika — Software & Embedded Systems Engineer working across software development, AI, embedded systems, VLSI and hardware–software integration.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "profile" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="relative min-h-screen">
+      <Nav />
+      <main>
+        <Hero />
+        <ResumeStrip />
+        <About />
+        <Expertise />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Education />
+        <Certifications />
+        <Achievements />
+        <Resume />
+        <Profiles />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }
