@@ -80,7 +80,7 @@ export function Contact() {
       subject: String(form.get("subject") ?? "").trim(),
       message: String(form.get("message") ?? "").trim(),
     };
-    const next: Record<string, string> = {};
+    const next: FieldErrors = {};
     if (values.name.length < 2) next.name = "Please enter your name.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) next.email = "Please enter a valid email address.";
     if (values.subject.length < 3) next.subject = "Please add a subject.";
