@@ -12,6 +12,7 @@
  */
 
 import profileAsset from "@/assets/profile.png.asset.json";
+import resumeAsset from "@/assets/resume.pdf.asset.json";
 
 export type ProjectCategory = "Software" | "AI / ML" | "Web" | "Embedded" | "VLSI / Hardware";
 
