@@ -12,6 +12,7 @@
  */
 
 import profileAsset from "@/assets/profile.png.asset.json";
+import resumeAsset from "@/assets/resume.pdf.asset.json";
 
 export type ProjectCategory = "Software" | "AI / ML" | "Web" | "Embedded" | "VLSI / Hardware";
 
@@ -26,12 +27,12 @@ export const personal = {
     "I’m Lalitha Raga Pravallika, a Software & Embedded Systems Engineer and final-year Electronics & Communication Engineering student at Pragati Engineering College, with a CGPA of 8.86 and a Minor in Computer Science Engineering. I enjoy building modern software applications while exploring embedded systems, digital hardware, VLSI, and hardware–software integration. With hands-on experience across software development and electronics projects, I’m passionate about solving real-world problems through technology and continuously expanding my skills across both domains.",
   email: "pravallikamarri55@gmail.com",
   /** Optional. Leave empty to hide the phone everywhere. */
-  phone: "",
+  phone: "8019224955",
   /** Replace the uploaded image or point this at any image URL. */
   profileImage: profileAsset.url,
   profileAlt: "Marri Lalitha Raga Pravallika — Software & Embedded Systems Engineer",
   /** Put your CV/resume file URL here (e.g. upload a PDF and paste its link). */
-  resumeUrl: "",
+  resumeUrl: resumeAsset.url,
   /** Set to false to hide the "Open to Opportunities" badge. */
   availabilityStatus: true,
   availabilityLabel: "Open to Opportunities",
@@ -507,18 +508,27 @@ export type Certification = {
 
 export const certifications: Certification[] = [
   {
-    name: "NPTEL Elite Certification",
-    organization: "NPTEL",
-    date: "",
+    name: "AWS Certified Developer – Associate (DVA-C02)",
+    organization: "Amazon Web Services",
+    date: "2026",
     credentialUrl: "",
-    description: "Elite grade awarded in an NPTEL certification course.",
+    description:
+      "Validates skills in developing, deploying, securing and troubleshooting applications on AWS.",
   },
   {
-    name: "NPTEL Certification",
+    name: "Microsoft Certified: Fabric Data Engineer Associate",
+    organization: "Microsoft",
+    date: "",
+    credentialUrl: "",
+    description:
+      "Demonstrates expertise in data engineering with Microsoft Fabric — data integration, transformation and analytics.",
+  },
+  {
+    name: "NPTEL Elite — Human Computer Interaction (96%)",
     organization: "NPTEL",
     date: "",
     credentialUrl: "",
-    description: "Completed NPTEL technical certification coursework.",
+    description: "Elite grade awarded with a final score of 96%.",
   },
 ];
 
@@ -526,12 +536,23 @@ export type Achievement = { title: string; organization: string; year?: string; 
 
 export const achievements: Achievement[] = [
   {
+    title: "300+ DSA problems solved on LeetCode",
+    organization: "LeetCode",
+    year: "",
+    description: "Consistent problem solving to strengthen algorithmic thinking.",
+  },
+  {
+    title: "NPTEL Elite — Human Computer Interaction, 96%",
+    organization: "NPTEL",
+    year: "",
+    description: "Elite certification with a 96% final score.",
+  },
+  {
     title: "NPTEL Top 5% Achievement",
     organization: "NPTEL",
     year: "",
     description: "Placed in the top 5% of course participants.",
   },
-  { title: "NPTEL Elite Certification", organization: "NPTEL", year: "", description: "Elite grade in NPTEL coursework." },
   {
     title: "Quiz Competition — School Level",
     organization: "School Level",
