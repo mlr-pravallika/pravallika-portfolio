@@ -27,12 +27,12 @@ export const personal = {
     "I’m Lalitha Raga Pravallika, a Software & Embedded Systems Engineer and final-year Electronics & Communication Engineering student at Pragati Engineering College, with a CGPA of 8.86 and a Minor in Computer Science Engineering. I enjoy building modern software applications while exploring embedded systems, digital hardware, VLSI, and hardware–software integration. With hands-on experience across software development and electronics projects, I’m passionate about solving real-world problems through technology and continuously expanding my skills across both domains.",
   email: "pravallikamarri55@gmail.com",
   /** Optional. Leave empty to hide the phone everywhere. */
-  phone: "",
+  phone: "8019224955",
   /** Replace the uploaded image or point this at any image URL. */
   profileImage: profileAsset.url,
   profileAlt: "Marri Lalitha Raga Pravallika — Software & Embedded Systems Engineer",
   /** Put your CV/resume file URL here (e.g. upload a PDF and paste its link). */
-  resumeUrl: "",
+  resumeUrl: resumeAsset.url,
   /** Set to false to hide the "Open to Opportunities" badge. */
   availabilityStatus: true,
   availabilityLabel: "Open to Opportunities",
