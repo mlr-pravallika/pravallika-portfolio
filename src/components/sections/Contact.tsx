@@ -66,10 +66,11 @@ export function Profiles() {
 }
 
 type Status = "idle" | "sending" | "error";
+type FieldErrors = { name?: string; email?: string; subject?: string; message?: string };
 
 export function Contact() {
   const [status, setStatus] = useState<Status>("idle");
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState<FieldErrors>({});
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
