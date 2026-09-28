@@ -508,18 +508,27 @@ export type Certification = {
 
 export const certifications: Certification[] = [
   {
-    name: "NPTEL Elite Certification",
-    organization: "NPTEL",
-    date: "",
+    name: "AWS Certified Developer – Associate (DVA-C02)",
+    organization: "Amazon Web Services",
+    date: "2026",
     credentialUrl: "",
-    description: "Elite grade awarded in an NPTEL certification course.",
+    description:
+      "Validates skills in developing, deploying, securing and troubleshooting applications on AWS.",
   },
   {
-    name: "NPTEL Certification",
+    name: "Microsoft Certified: Fabric Data Engineer Associate",
+    organization: "Microsoft",
+    date: "",
+    credentialUrl: "",
+    description:
+      "Demonstrates expertise in data engineering with Microsoft Fabric — data integration, transformation and analytics.",
+  },
+  {
+    name: "NPTEL Elite — Human Computer Interaction (96%)",
     organization: "NPTEL",
     date: "",
     credentialUrl: "",
-    description: "Completed NPTEL technical certification coursework.",
+    description: "Elite grade awarded with a final score of 96%.",
   },
 ];
 
@@ -527,12 +536,23 @@ export type Achievement = { title: string; organization: string; year?: string; 
 
 export const achievements: Achievement[] = [
   {
+    title: "300+ DSA problems solved on LeetCode",
+    organization: "LeetCode",
+    year: "",
+    description: "Consistent problem solving to strengthen algorithmic thinking.",
+  },
+  {
+    title: "NPTEL Elite — Human Computer Interaction, 96%",
+    organization: "NPTEL",
+    year: "",
+    description: "Elite certification with a 96% final score.",
+  },
+  {
     title: "NPTEL Top 5% Achievement",
     organization: "NPTEL",
     year: "",
     description: "Placed in the top 5% of course participants.",
   },
-  { title: "NPTEL Elite Certification", organization: "NPTEL", year: "", description: "Elite grade in NPTEL coursework." },
   {
     title: "Quiz Competition — School Level",
     organization: "School Level",
