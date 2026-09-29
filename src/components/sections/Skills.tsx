@@ -61,6 +61,21 @@ export function Skills() {
                       className="block cursor-default rounded-lg border border-border bg-surface-2 px-3 py-1.5 text-sm transition-colors group-hover:border-primary/50 group-hover:text-accent"
                     >
                       {s.name}
+                      {s.level ? (
+                        <span className="ml-2 inline-flex items-center gap-1.5 align-middle">
+                          <span className="font-mono text-[0.66rem] uppercase tracking-wide text-accent">
+                            {s.level.label}
+                          </span>
+                          <span className="relative inline-block h-1 w-10 overflow-hidden rounded-full bg-border align-middle">
+                            <span
+                              className="absolute inset-y-0 left-0 rounded-full bg-accent"
+                              style={{ width: `${s.level.percent}%` }}
+                              aria-hidden="true"
+                            />
+                          </span>
+                          <span className="font-mono text-[0.66rem] text-muted-foreground">{s.level.percent}%</span>
+                        </span>
+                      ) : null}
                     </span>
                     <span
                       role="tooltip"

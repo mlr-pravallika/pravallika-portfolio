@@ -102,7 +102,13 @@ export const expertise = [
   },
 ];
 
-export type Skill = { name: string; category: string; description: string };
+export type Skill = {
+  name: string;
+  category: string;
+  description: string;
+  /** Self-rated proficiency. Leave empty until the owner supplies it. */
+  level?: { label: string; percent: number };
+};
 
 export const skillCategories = [
   "Programming",
