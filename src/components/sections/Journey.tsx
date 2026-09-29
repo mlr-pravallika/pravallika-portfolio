@@ -148,6 +148,16 @@ export function Achievements() {
                 {a.description ? (
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{a.description}</p>
                 ) : null}
+                {a.credentialUrl ? (
+                  <a
+                    href={a.credentialUrl}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="mt-4 inline-block font-mono text-xs text-accent underline-offset-4 hover:underline"
+                  >
+                    View credential
+                  </a>
+                ) : null}
               </div>
             </article>
           </Reveal>
