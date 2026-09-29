@@ -593,6 +593,13 @@ export const certifications: Certification[] = [
     credentialUrl: "https://drive.google.com/file/d/1GvTUpa9KQYv6mCTTYGo9zH6gD6BwTgc7/view?usp=drive_link",
     description: "Coursework in embedded system design.",
   },
+  {
+    name: "EDGE AI & IoT Intelligence",
+    organization: "",
+    date: "",
+    credentialUrl: "https://drive.google.com/file/d/1_KPV2L1bpEiK08F0eZXXXDwRDX2AWa6O/view?usp=drive_link",
+    description: "Edge AI and Internet of Things intelligence coursework.",
+  },
 ];
 
 export type Achievement = { title: string; organization: string; year?: string; description?: string };
