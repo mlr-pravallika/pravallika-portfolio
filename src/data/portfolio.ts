@@ -508,27 +508,90 @@ export type Certification = {
 
 export const certifications: Certification[] = [
   {
-    name: "AWS Certified Developer – Associate (DVA-C02)",
+    name: "AWS Certified Developer – Associate",
     organization: "Amazon Web Services",
-    date: "2026",
-    credentialUrl: "",
+    date: "",
+    credentialUrl: "https://drive.google.com/file/d/1sWE6cJ7_Jh9MsVLBumsWuDdywMe2dSBT/view?usp=drive_link",
     description:
       "Validates skills in developing, deploying, securing and troubleshooting applications on AWS.",
+  },
+  {
+    name: "AWS Certified Solutions Architect – Associate",
+    organization: "Amazon Web Services",
+    date: "",
+    credentialUrl: "https://drive.google.com/file/d/1SDAax_iWH64yyZ5rnPy0l0itcetLaTYk/view?usp=drive_link",
+    description: "Designing resilient, high-performing and cost-optimized architectures on AWS.",
+  },
+  {
+    name: "AWS Cloud Practitioner",
+    organization: "Amazon Web Services",
+    date: "",
+    credentialUrl: "https://drive.google.com/file/d/1N6LYjZ0W3vkQAC00GJBLSisxaTN9yV2o/view?usp=drive_link",
+    description: "Foundational understanding of AWS Cloud concepts, services and security.",
+  },
+  {
+    name: "AWS AI Practitioner",
+    organization: "Amazon Web Services",
+    date: "",
+    credentialUrl: "https://drive.google.com/file/d/1PoRIFr27oyA6AQ7rqN9e8faAR0xIDw3a/view?usp=drive_link",
+    description: "Foundational knowledge of AI, ML and generative AI concepts on AWS.",
   },
   {
     name: "Microsoft Certified: Fabric Data Engineer Associate",
     organization: "Microsoft",
     date: "",
-    credentialUrl: "",
+    credentialUrl: "https://drive.google.com/file/d/1Cu6HQGurq3_uulivXBlNgIC208y4W-JE/view?usp=drive_link",
     description:
       "Demonstrates expertise in data engineering with Microsoft Fabric — data integration, transformation and analytics.",
+  },
+  {
+    name: "Salesforce Certified Agentforce Specialist",
+    organization: "Salesforce",
+    date: "",
+    credentialUrl: "https://drive.google.com/file/d/1h8DYHQaxaJ2vh31Rzdy2HNaCabCf2-Yn/view?usp=drive_link",
+    description: "Building and managing AI agents with Salesforce Agentforce.",
+  },
+  {
+    name: "Aviatrix Cloud Computing",
+    organization: "Aviatrix",
+    date: "",
+    credentialUrl: "https://drive.google.com/file/d/1X81Ms53wLc6n8tjWz5rSNyjVgqB095Fw/view?usp=sharing",
+    description: "Multicloud networking and cloud infrastructure fundamentals.",
+  },
+  {
+    name: "Certified Implementation Specialist – Data Foundations (CMDB and CSDM)",
+    organization: "ServiceNow",
+    date: "",
+    credentialUrl: "https://drive.google.com/file/d/1ppDQLackVXcok4HYYfnNb04IPNtozCRY/view?usp=drive_link",
+    description: "ServiceNow CIS-DF certification covering CMDB and CSDM data foundations.",
+  },
+  {
+    name: "Micro-Certification — Welcome to ServiceNow",
+    organization: "ServiceNow",
+    date: "",
+    credentialUrl: "https://drive.google.com/file/d/1jMDbfcJPsJIQTfQP3rK3aIlZvB4yVSZS/view?usp=drive_link",
+    description: "Introduction to the ServiceNow platform and its core capabilities.",
+  },
+  {
+    name: "GenAI Certificate",
+    organization: "",
+    date: "",
+    credentialUrl: "https://drive.google.com/file/d/1coBlFLAYb0DNM0QhDqrT6cNya1LwqoWK/view?usp=drive_link",
+    description: "Coursework in generative AI concepts and applications.",
   },
   {
     name: "NPTEL Elite — Human Computer Interaction (96%)",
     organization: "NPTEL",
     date: "",
-    credentialUrl: "",
+    credentialUrl: "https://drive.google.com/file/d/1tzdeGJx0Hqc3NksDIQSi5aiCkmedCBC8/view?usp=drive_link",
     description: "Elite grade awarded with a final score of 96%.",
+  },
+  {
+    name: "NPTEL — Embedded System Design",
+    organization: "NPTEL",
+    date: "",
+    credentialUrl: "https://drive.google.com/file/d/1GvTUpa9KQYv6mCTTYGo9zH6gD6BwTgc7/view?usp=drive_link",
+    description: "Coursework in embedded system design.",
   },
 ];
 

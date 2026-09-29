@@ -93,7 +93,7 @@ export function Certifications() {
       <SectionHeading
         eyebrow="Certifications"
         title="Certifications"
-        subtitle="NPTEL coursework including Elite grading. Credential links and dates can be added at any time."
+        subtitle="Industry certifications across cloud, AI, data and platforms, plus NPTEL coursework with Elite grading."
       />
       <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {certifications.map((c, i) => (
