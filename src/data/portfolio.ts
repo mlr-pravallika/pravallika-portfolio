@@ -12,7 +12,6 @@
  */
 
 import profileAsset from "@/assets/profile.png.asset.json";
-import resumeAsset from "@/assets/resume.pdf.asset.json";
 
 export type ProjectCategory = "Software" | "AI / ML" | "Web" | "Embedded" | "VLSI / Hardware";
 
@@ -32,7 +31,9 @@ export const personal = {
   profileImage: profileAsset.url,
   profileAlt: "Marri Lalitha Raga Pravallika — Software & Embedded Systems Engineer",
   /** Put your CV/resume file URL here (e.g. upload a PDF and paste its link). */
-  resumeUrl: resumeAsset.url,
+  resumeUrl: "https://drive.google.com/file/d/1wh7kaO4i31gHYj0s4F0FuiyW1Yr_Aulp/view?usp=sharing",
+  /** Direct-download variant of the same file. */
+  resumeDownloadUrl: "https://drive.google.com/uc?export=download&id=1wh7kaO4i31gHYj0s4F0FuiyW1Yr_Aulp",
   /** Set to false to hide the "Open to Opportunities" badge. */
   availabilityStatus: true,
   availabilityLabel: "Open to Opportunities",
@@ -102,7 +103,11 @@ export const expertise = [
   },
 ];
 
-export type Skill = { name: string; category: string; description: string };
+/** level = self-assessed proficiency: 30 Basic · 50 Intermediate · 60 High · 80 Advanced · 100 Expert */
+export type Skill = { name: string; category: string; description: string; level: number };
+
+export const levelLabel = (level: number): string =>
+  level >= 100 ? "Expert" : level >= 80 ? "Advanced" : level >= 60 ? "High" : level >= 50 ? "Intermediate" : "Basic";
 
 export const skillCategories = [
   "Programming",
@@ -115,42 +120,42 @@ export const skillCategories = [
 ] as const;
 
 export const skills: Skill[] = [
-  { name: "C", category: "Programming", description: "Core systems and problem-solving language." },
-  { name: "C++", category: "Programming", description: "Object-oriented programming and data structures." },
-  { name: "Python", category: "Programming", description: "Scripting, ML workflows and application logic." },
-  { name: "Java (Basics)", category: "Programming", description: "Fundamentals of object-oriented Java." },
+  { name: "C", category: "Programming", description: "Core systems and problem-solving language.", level: 50 },
+  { name: "C++", category: "Programming", description: "Object-oriented programming and data structures.", level: 50 },
+  { name: "Python", category: "Programming", description: "Scripting, ML workflows and application logic.", level: 60 },
+  { name: "Java (Basics)", category: "Programming", description: "Fundamentals of object-oriented Java.", level: 30 },
 
-  { name: "HTML", category: "Web Development", description: "Semantic, accessible page structure." },
-  { name: "CSS", category: "Web Development", description: "Responsive layouts and modern styling." },
-  { name: "React", category: "Web Development", description: "Component-driven user interfaces." },
+  { name: "HTML", category: "Web Development", description: "Semantic, accessible page structure.", level: 30 },
+  { name: "CSS", category: "Web Development", description: "Responsive layouts and modern styling.", level: 30 },
+  { name: "React", category: "Web Development", description: "Component-driven user interfaces.", level: 30 },
 
-  { name: "Machine Learning", category: "AI / ML / Generative AI", description: "Model training, evaluation and prediction." },
-  { name: "NLP", category: "AI / ML / Generative AI", description: "Text preprocessing and language-based features." },
-  { name: "TF-IDF", category: "AI / ML / Generative AI", description: "Feature extraction for text classification." },
-  { name: "Streamlit", category: "AI / ML / Generative AI", description: "Fast interactive interfaces for ML apps." },
-  { name: "Gemini API", category: "AI / ML / Generative AI", description: "Generative AI integration in applications." },
-  { name: "Generative AI", category: "AI / ML / Generative AI", description: "Building features around generative models." },
-  { name: "AI", category: "AI / ML / Generative AI", description: "Applied artificial intelligence concepts." },
+  { name: "Machine Learning", category: "AI / ML / Generative AI", description: "Model training, evaluation and prediction.", level: 50 },
+  { name: "NLP", category: "AI / ML / Generative AI", description: "Text preprocessing and language-based features.", level: 30 },
+  { name: "TF-IDF", category: "AI / ML / Generative AI", description: "Feature extraction for text classification.", level: 50 },
+  { name: "Streamlit", category: "AI / ML / Generative AI", description: "Fast interactive interfaces for ML apps.", level: 50 },
+  { name: "Gemini API", category: "AI / ML / Generative AI", description: "Generative AI integration in applications.", level: 50 },
+  { name: "Generative AI", category: "AI / ML / Generative AI", description: "Building features around generative models.", level: 50 },
+  { name: "AI", category: "AI / ML / Generative AI", description: "Applied artificial intelligence concepts.", level: 60 },
 
-  { name: "SQL", category: "Databases", description: "Querying and relational data modelling." },
-  { name: "PostgreSQL", category: "Databases", description: "Relational database design and usage." },
+  { name: "SQL", category: "Databases", description: "Querying and relational data modelling.", level: 60 },
+  { name: "PostgreSQL", category: "Databases", description: "Relational database design and usage.", level: 50 },
 
-  { name: "Embedded C", category: "Embedded / Hardware", description: "Firmware logic for microcontrollers." },
-  { name: "Digital Electronics", category: "Embedded / Hardware", description: "Logic design and circuit fundamentals." },
-  { name: "Sensors", category: "Embedded / Hardware", description: "Reading and conditioning physical signals." },
-  { name: "Microcontrollers", category: "Embedded / Hardware", description: "Arduino-class controller programming." },
+  { name: "Embedded C", category: "Embedded / Hardware", description: "Firmware logic for microcontrollers.", level: 50 },
+  { name: "Digital Electronics", category: "Embedded / Hardware", description: "Logic design and circuit fundamentals.", level: 80 },
+  { name: "Sensors", category: "Embedded / Hardware", description: "Reading and conditioning physical signals.", level: 50 },
+  { name: "Microcontrollers", category: "Embedded / Hardware", description: "Arduino-class controller programming.", level: 60 },
 
-  { name: "Verilog", category: "VLSI / Digital Design", description: "RTL description of digital hardware." },
-  { name: "RTL Design", category: "VLSI / Digital Design", description: "Register-transfer level modelling." },
-  { name: "RISC-V", category: "VLSI / Digital Design", description: "Instruction set and pipeline architecture." },
-  { name: "EDA Playground", category: "VLSI / Digital Design", description: "Online RTL simulation and testing." },
-  { name: "Icarus Verilog", category: "VLSI / Digital Design", description: "Open-source simulation and waveforms." },
+  { name: "Verilog", category: "VLSI / Digital Design", description: "RTL description of digital hardware.", level: 80 },
+  { name: "RTL Design", category: "VLSI / Digital Design", description: "Register-transfer level modelling.", level: 50 },
+  { name: "RISC-V", category: "VLSI / Digital Design", description: "Instruction set and pipeline architecture.", level: 50 },
+  { name: "EDA Playground", category: "VLSI / Digital Design", description: "Online RTL simulation and testing.", level: 50 },
+  { name: "Icarus Verilog", category: "VLSI / Digital Design", description: "Open-source simulation and waveforms.", level: 50 },
 
-  { name: "GCP", category: "Cloud / Tools", description: "Cloud services and deployment basics." },
-  { name: "Git", category: "Cloud / Tools", description: "Version control and branching workflows." },
-  { name: "GitHub", category: "Cloud / Tools", description: "Code hosting and collaboration." },
-  { name: "VS Code", category: "Cloud / Tools", description: "Primary development environment." },
-  { name: "Excel", category: "Cloud / Tools", description: "Data organisation and analysis." },
+  { name: "GCP", category: "Cloud / Tools", description: "Cloud services and deployment basics.", level: 50 },
+  { name: "Git", category: "Cloud / Tools", description: "Version control and branching workflows.", level: 30 },
+  { name: "GitHub", category: "Cloud / Tools", description: "Code hosting and collaboration.", level: 50 },
+  { name: "VS Code", category: "Cloud / Tools", description: "Primary development environment.", level: 50 },
+  { name: "Excel", category: "Cloud / Tools", description: "Data organisation and analysis.", level: 50 },
 ];
 
 export type Project = {

@@ -25,8 +25,7 @@ export function Resume() {
                 <ExternalLink className="size-4" /> View Resume
               </a>
               <a
-                href={personal.resumeUrl}
-                download
+                href={personal.resumeDownloadUrl}
                 className="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground"
               >
                 <Download className="size-4" /> Download Resume

@@ -75,8 +75,7 @@ export function Hero() {
             </button>
             {personal.resumeUrl ? (
               <a
-                href={personal.resumeUrl}
-                download
+                href={personal.resumeDownloadUrl}
                 className="inline-flex items-center gap-2 rounded-xl border border-border bg-surface-2 px-5 py-3 text-sm font-semibold transition-colors hover:border-primary/50"
               >
                 <Download className="size-4" /> Download CV

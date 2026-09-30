@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { Reveal, SectionHeading } from "@/components/Reveal";
-import { skillCategories, skills } from "@/data/portfolio";
+import { levelLabel, skillCategories, skills } from "@/data/portfolio";
 
 export function Skills() {
   const [active, setActive] = useState<string>("All");
@@ -19,7 +19,7 @@ export function Skills() {
       <SectionHeading
         eyebrow="Skills"
         title="Technology ecosystem"
-        subtitle="Tools and technologies I actually work with, grouped by domain. Hover a chip for a short note on how I use it."
+        subtitle="Tools and technologies I actually work with, grouped by domain, with my self-assessed proficiency level for each."
       />
 
       <Reveal delay={0.05} className="mt-8">
@@ -53,21 +53,25 @@ export function Skills() {
                 </span>
               </div>
               <div className="trace-line mt-4 h-px w-full" aria-hidden="true" />
-              <ul className="mt-5 flex flex-wrap gap-2">
+              <ul className="mt-5 space-y-4">
                 {group.items.map((s) => (
-                  <li key={s.name} className="group relative">
-                    <span
-                      tabIndex={0}
-                      className="block cursor-default rounded-lg border border-border bg-surface-2 px-3 py-1.5 text-sm transition-colors group-hover:border-primary/50 group-hover:text-accent"
+                  <li key={s.name} title={s.description}>
+                    <div className="flex items-baseline justify-between gap-3">
+                      <span className="text-sm">{s.name}</span>
+                      <span className="font-mono text-[0.68rem] uppercase tracking-[0.12em] text-muted-foreground">
+                        {levelLabel(s.level)} · {s.level}%
+                      </span>
+                    </div>
+                    <div
+                      className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-surface-2"
+                      role="img"
+                      aria-label={`${s.name}: ${levelLabel(s.level)}, ${s.level} percent`}
                     >
-                      {s.name}
-                    </span>
-                    <span
-                      role="tooltip"
-                      className="pointer-events-none absolute bottom-full left-0 z-20 mb-2 hidden w-52 rounded-lg border border-border bg-popover p-3 text-xs leading-relaxed text-muted-foreground shadow-lg group-hover:block group-focus-within:block"
-                    >
-                      {s.description}
-                    </span>
+                      <div
+                        className="h-full rounded-full bg-gradient-to-r from-primary to-accent"
+                        style={{ width: `${s.level}%` }}
+                      />
+                    </div>
                   </li>
                 ))}
               </ul>
