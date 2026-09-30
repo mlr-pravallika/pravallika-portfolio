@@ -14,8 +14,7 @@ export function ResumeStrip() {
           {personal.resumeUrl ? (
             <>
               <a
-                href={personal.resumeUrl}
-                download
+                href={personal.resumeDownloadUrl}
                 className="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground"
               >
                 <Download className="size-4" /> Download CV
@@ -45,7 +44,7 @@ export function About() {
     <section id="about" className="section-pad relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <SectionHeading
         eyebrow="About Me"
-        title="Engineering across software, AI and embedded systems."
+        title="Turning ideas into working software, AI and embedded solutions."
       />
       <Reveal delay={0.05} className="mt-8 max-w-3xl">
         <p className="text-base leading-relaxed text-muted-foreground">{personal.about}</p>
