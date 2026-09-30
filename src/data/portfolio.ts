@@ -593,40 +593,30 @@ export const certifications: Certification[] = [
     credentialUrl: "https://drive.google.com/file/d/1GvTUpa9KQYv6mCTTYGo9zH6gD6BwTgc7/view?usp=drive_link",
     description: "Coursework in embedded system design.",
   },
+  {
+    name: "Edge AI & IoT Intelligence",
+    organization: "",
+    date: "",
+    credentialUrl: "https://drive.google.com/file/d/1_KPV2L1bpEiK08F0eZXXXDwRDX2AWa6O/view?usp=drive_link",
+    description: "Edge AI and IoT intelligence — running intelligent workloads on connected devices.",
+  },
 ];
 
-export type Achievement = { title: string; organization: string; year?: string; description?: string };
+export type Achievement = {
+  title: string;
+  organization: string;
+  year?: string;
+  description?: string;
+  credentialUrl?: string;
+};
 
 export const achievements: Achievement[] = [
-  {
-    title: "300+ DSA problems solved on LeetCode",
-    organization: "LeetCode",
-    year: "",
-    description: "Consistent problem solving to strengthen algorithmic thinking.",
-  },
-  {
-    title: "NPTEL Elite — Human Computer Interaction, 96%",
-    organization: "NPTEL",
-    year: "",
-    description: "Elite certification with a 96% final score.",
-  },
   {
     title: "NPTEL Top 5% Achievement",
     organization: "NPTEL",
     year: "",
     description: "Placed in the top 5% of course participants.",
-  },
-  {
-    title: "Quiz Competition — School Level",
-    organization: "School Level",
-    year: "",
-    description: "Recognised in school-level quiz competitions.",
-  },
-  {
-    title: "Essay Writing Competition — School Level",
-    organization: "School Level",
-    year: "",
-    description: "Recognised in school-level essay writing competitions.",
+    credentialUrl: "https://drive.google.com/file/d/1_KPV2L1bpEiK08F0eZXXXDwRDX2AWa6O/view?usp=drive_link",
   },
 ];
 
