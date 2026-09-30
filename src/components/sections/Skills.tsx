@@ -19,7 +19,7 @@ export function Skills() {
       <SectionHeading
         eyebrow="Skills"
         title="Technology ecosystem"
-        subtitle="Tools and technologies I actually work with, grouped by domain. Hover a chip for a short note on how I use it."
+        subtitle="Tools and technologies I actually work with, grouped by domain, with my self-assessed proficiency level for each."
       />
 
       <Reveal delay={0.05} className="mt-8">
