@@ -45,7 +45,7 @@ export function About() {
     <section id="about" className="section-pad relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <SectionHeading
         eyebrow="About Me"
-        title="Software-first, technically versatile, hardware-aware."
+        title="Engineering across software, AI and embedded systems."
       />
       <Reveal delay={0.05} className="mt-8 max-w-3xl">
         <p className="text-base leading-relaxed text-muted-foreground">{personal.about}</p>
