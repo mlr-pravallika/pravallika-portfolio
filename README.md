@@ -13,9 +13,8 @@ I enjoy building practical solutions that combine software engineering with elec
 ## 🌐 Live Portfolio
 
 **Portfolio Website:**  
-https://pravallikawork.lovable.app
 
-> The production deployment URL will be updated here after deployment through Vercel.
+https://pravallika-portfolio-eosin.vercel.app/
 
 ---
 
