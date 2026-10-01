@@ -13,3 +13,4 @@
 - All displayed portfolio content (personal details, skills, projects, experience, education, certifications, achievements, nav items) lives in `src/data/portfolio.ts`; components render from it so content updates never require layout changes.
 - Page sections live in `src/components/sections/` and are composed only in `src/routes/index.tsx`, keeping the single-page order explicit in one place.
 - The hero background visual is a 2D canvas (`src/components/TechCanvas.tsx`) rather than WebGL/three.js, to keep the page fast and avoid a WebGL fallback path.
+- The original profile portrait is stored at `public/images/profile/profile-photo.jpg` and referenced through `personal.profileImage` so third-party deployments do not depend on Lovable-only asset routes.
