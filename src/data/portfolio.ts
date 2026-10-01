@@ -11,8 +11,6 @@
  *  - experience / education / certifications / achievements
  */
 
-import profileAsset from "@/assets/profile.png.asset.json";
-
 export type ProjectCategory = "Software" | "AI / ML" | "Web" | "Embedded" | "VLSI / Hardware";
 
 export const personal = {
@@ -27,8 +25,8 @@ export const personal = {
   email: "pravallikamarri55@gmail.com",
   /** Optional. Leave empty to hide the phone everywhere. */
   phone: "8019224955",
-  /** Replace the uploaded image or point this at any image URL. */
-  profileImage: profileAsset.url,
+  /** Repository-hosted portrait; served unchanged from the public directory on any deployment. */
+  profileImage: "/images/profile/profile-photo.jpg",
   profileAlt: "Marri Lalitha Raga Pravallika — Software & Embedded Systems Engineer",
   /** Put your CV/resume file URL here (e.g. upload a PDF and paste its link). */
   resumeUrl: "https://drive.google.com/file/d/1wh7kaO4i31gHYj0s4F0FuiyW1Yr_Aulp/view?usp=sharing",
