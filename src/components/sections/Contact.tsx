@@ -64,16 +64,22 @@ export function Profiles() {
   );
 }
 
-type Status = "idle" | "sending" | "error";
+type Status = "idle" | "sending" | "success" | "error";
 type FieldErrors = { name?: string; email?: string; subject?: string; message?: string };
+
+// FormSubmit forwards form submissions to the inbox below. Free service:
+// the very first submission from the live site triggers a one-time
+// activation email that must be clicked before delivery starts.
+const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/pravallikamarri29@gmail.com";
 
 export function Contact() {
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<FieldErrors>({});
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = new FormData(e.currentTarget);
+    const formEl = e.currentTarget;
+    const form = new FormData(formEl);
     const values = {
       name: String(form.get("name") ?? "").trim(),
       email: String(form.get("email") ?? "").trim(),
@@ -91,14 +97,28 @@ export function Contact() {
       return;
     }
 
-    // No email backend is configured yet, so the message is handed to the
-    // visitor's mail client instead of claiming a send that didn't happen.
     setStatus("sending");
-    const body = `${values.message}\n\n— ${values.name} (${values.email})`;
-    window.location.href = `mailto:${personal.email}?subject=${encodeURIComponent(
-      values.subject,
-    )}&body=${encodeURIComponent(body)}`;
-    setTimeout(() => setStatus("idle"), 1200);
+    try {
+      const res = await fetch(FORMSUBMIT_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          ...values,
+          _subject: `Portfolio contact: ${values.subject}`,
+          _template: "table",
+          _captcha: "false",
+        }),
+      });
+      const data = (await res.json().catch(() => null)) as { success?: string } | null;
+      if (res.ok && data?.success === "true") {
+        setStatus("success");
+        formEl.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   const field =
@@ -159,12 +179,21 @@ export function Contact() {
               className="mt-6 inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5 disabled:opacity-70"
             >
               <Send className="size-4" />
-              {status === "sending" ? "Opening your mail app…" : "Send Message"}
+              {status === "sending" ? "Sending…" : "Send Message"}
             </button>
-            <p className="mt-3 text-xs text-muted-foreground">
-              This opens your email app with the message ready to send, so nothing is lost. Connect an email
-              service later to send directly from the site.
-            </p>
+            {status === "success" ? (
+              <p className="mt-3 text-sm font-medium text-accent" role="status">
+                Message sent — it has landed in my inbox. I'll get back to you soon!
+              </p>
+            ) : status === "error" ? (
+              <p className="mt-3 text-sm font-medium text-destructive" role="alert">
+                Something went wrong while sending. Please try again, or email me directly at {personal.email}.
+              </p>
+            ) : (
+              <p className="mt-3 text-xs text-muted-foreground">
+                Your message is delivered straight to my email inbox — I usually reply within a day.
+              </p>
+            )}
           </form>
         </Reveal>
 
